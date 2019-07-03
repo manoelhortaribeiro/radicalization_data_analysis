@@ -21,8 +21,7 @@ for edge in edges:
     for actual_edge in edge["edges"]:
         if G.has_node(actual_edge["channel_id"]):
             G.add_edge(edge["channel_id"], actual_edge["channel_id"],
-                       kind=actual_edge["type"] if actual_edge[
-                                                       "type"] == "Canais relacionados" else "Featured channels")
+                       kind=actual_edge["type"] if actual_edge["type"] == "Canais relacionados" else "Featured channels")
 pr = nx.pagerank(G)
 
 for node in G.nodes():
